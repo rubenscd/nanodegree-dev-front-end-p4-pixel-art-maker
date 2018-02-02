@@ -1,17 +1,16 @@
-# Pixel Art Maker Project
+# Projeto Pixel Art Maker
 
-## Table of Contents
+// ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Sobre](#Sobre)
+* [Extras](#Extras)
 
-## Instructions
+## Sobre
 
-To get started, open `designs.js` and start building out the app's functionality.
+O Pixel Art Maker, você poderá desenha uma arte em pixel, crie a grade selecione a cor e só marcar a demarcada.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
+## Extras
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Referências utilizadas na produção do projeto. [jQuery](https://jquery.com/)
 # nanodegree-dev-front-end-p4-pixel-art-maker

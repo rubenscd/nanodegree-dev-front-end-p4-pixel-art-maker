@@ -1,9 +1,17 @@
 $(function() {
 	console.log('carregou o scripts.js');
-	
+
+	// polyfill input color
+	if (!Modernizr.inputtypes.color) {
+		$("#colorPicker").spectrum({
+			preferredFormat: "hex"
+		});
+	}
+
 	// Get form data
 	let grid = {
-		colorActive: '#000000',
+		colorBase: '#fff',
+		colorSelected: '#000',
 		rowsTotals: 0,
 		colsTotals: 0,
 		// createdGrid: [[]],
@@ -18,53 +26,46 @@ $(function() {
 				createdGrid += '<tr id="linha-'+row+'">';
 				for (let col = 0; col < Number(grid.colsTotals); col++) {
 					// grid.createdGrid[row][col] = 'off';
-					createdGrid += '<td id="linha-'+row+'-coluna-'+col+'" class="off">'+row+","+col+'</td>';
+					createdGrid += '<td id="linha-'+row+'-coluna-'+col+'"></td>';
+					// createdGrid += '<td id="linha-'+row+'-coluna-'+col+'" class="off">'+(row+1)+","+(col+1)+'</td>';
 				}
 				createdGrid += '</tr>';
 			}
 			return $('#pixelCanvas').append(createdGrid);
 		},
-		paintingGrid: function() {
+		paintingGrid: function(cell) {
+			// console.log($(cell));
+			// if ($(cell).hasClass('on')) {
+			// 	$(cell).css('background-color',grid.colorBase);
+			// } else {
+			// 	$(cell).css('background-color',grid.colorSelected);
+			// }
+			$(cell).css('background-color',grid.colorSelected);
+			// console.log($(celula)[0].id);
+		},
+		changeColor: function(color) {
+			grid.colorSelected = color;
 		}
 	};
-	// // Select color input
-	// const colorActive = '#000000';
-	// // Select size input
-	// let rowsTotals = $('#grid-rows').val();
-	// let colsTotals = $('#grid-cols').val();
 
-
-	// console.log('pegou dados do form SEM submit',rowsTotals,colsTotals);
-
-	// When size is submitted by the user, call makeGrid()
-	// function makeGrid(rowsTotals,colsTotals) {
-	// 	console.log('altura, largura, grade ',Number(rowsTotals),Number(colsTotals),grid);
-	// 	// rowsTotals = document.sizePicker.input_height.value;
-	// 	// colsTotals = document.sizePicker.input_width.value;
-	// 	// return true;
-	// 	for (let row = 0; row < rowsTotals; row++) {
-	// 		console.log('row: ',row);
-	// 		for (let col = 0; col < colsTotals[row]; col++) {
-	// 			// if (numbers[row][col] % 2 === 0) {
-	// 			// 	numbers[row][col] = 'even';
-	// 			// } else {
-	// 			// 	numbers[row][col] = 'odd';
-	// 			// }
-	// 			console.log('col: ',col);
-	// 			console.log('grid: ',[row][col]);
-	// 			// return row[col];
-	// 		}
-	// 	}
-	// }
-	$('form').on('submit', function(evt) {
+	// Eventos
+	$("#sizePicker").on('submit', function(evt) {
 		evt.preventDefault();
-		// console.log($(this),evt);
-		const returnForm = $("form").serializeArray();
+		const returnForm = $(this).serializeArray();
 		grid.rowsTotals = returnForm[0].value;
 		grid.colsTotals = returnForm[1].value;
-		// console.log('pegou dados do form COM submit',rowsTotals,colsTotals);
-		// makeGrid(rowsTotals,colsTotals);
 		grid.makeGrid();
-		// grid.cleanGrid();
 	});
+	$('#pixelCanvas').on('click','td', function(evt) {
+		grid.paintingGrid(evt.target);
+	});
+	$('#colorPicker').on('input', function(evt){
+		// console.log(evt.target.value);
+		// console.log($('#colorPicker').spectrum("get"));
+		grid.changeColor(evt.target.value);
+	});
+	// $("#colorPicker").on('change', function(color) {
+	// 	console.log(color.toHexString());
+	// });
+	// console.log($('#colorPicker').spectrum("get"));
 });

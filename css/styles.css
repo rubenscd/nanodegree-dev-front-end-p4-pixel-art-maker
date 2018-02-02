@@ -33,12 +33,16 @@ table {
 }
 
 tr {
-    height: 20px;
+    height: 1rem;
 }
 
 td {
-    width: 20px;
+    width: 1rem;
+    cursor: pointer;
 }
+/* td.on {
+
+} */
 
 input[type=number] {
     width: 6em;

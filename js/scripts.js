@@ -4,32 +4,27 @@ $(function() {
 	// Get form data
 	let grid = {
 		colorActive: '#000000',
-		rowsTotals: 1,
-		colsTotals: 1,
+		rowsTotals: 0,
+		colsTotals: 0,
 		// createdGrid: [[]],
-		// cleanedGrid: true,
+		cleanedGrid: function() {
+			$('#pixelCanvas tr').remove();
+		},
 		makeGrid: function() {
-			// console.log(grid.cleanedGrid);
-			// if (grid.cleanedGrid) {
-				let createdGrid = "";
-				for (let row = 0; row < Number(grid.rowsTotals); row++) {
-					// grid.createdGrid[row] = [];
-					createdGrid += '<tr id="linha-'+row+'">';
-					for (let col = 0; col < Number(grid.colsTotals); col++) {
-						// grid.createdGrid[row][col] = 'off';
-						createdGrid += '<td id="linha-'+row+'-coluna-'+col+'" class="off">'+row+","+col+'</td>';
-					}
-					createdGrid += '</tr>';
+			grid.cleanedGrid();
+			let createdGrid = "";
+			for (let row = 0; row < Number(grid.rowsTotals); row++) {
+				// grid.createdGrid[row] = [];
+				createdGrid += '<tr id="linha-'+row+'">';
+				for (let col = 0; col < Number(grid.colsTotals); col++) {
+					// grid.createdGrid[row][col] = 'off';
+					createdGrid += '<td id="linha-'+row+'-coluna-'+col+'" class="off">'+row+","+col+'</td>';
 				}
-				grid.cleanedGrid = false;
-				// console.log(grid.cleanedGrid);
-				return $('#pixelCanvas').prepend(createdGrid);
-			// } else {
-			// 	return $('#pixelCanvas').remove();
-			// }
+				createdGrid += '</tr>';
+			}
+			return $('#pixelCanvas').append(createdGrid);
 		},
 		paintingGrid: function() {
-
 		}
 	};
 	// // Select color input

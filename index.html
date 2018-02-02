@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pixel Art Maker!</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Lab: Pixel Art Maker</h1>
+		
+		<h2>Escolha o tamanho da grade</h2>
+		<!-- <form id="sizePicker" method="get" action=""> -->
+		<form id="sizePicker">
+			Grade Altura: <input type="number" id="grid-rows" name="grid_rows" min="1" value="1">
+			Grade Largura: <input type="number" id="grid-cols" name="grid_cols" min="1" value="1">
+			<!-- <input type="submit"> -->
+			<!-- <button type="button" onclick="makeGrid(10,5);">Enviar</button> -->
+			<button type="submit">Enviar</button>
+		</form>
+		
+		<h2>Pick A Color</h2>
+		<input type="color" id="colorPicker">
+		
+		<h2>Design Canvas</h2>
+		<table id="pixelCanvas"></table>
+		
+		<script src="js/scripts.js"></script>
+	</body>
+</html>

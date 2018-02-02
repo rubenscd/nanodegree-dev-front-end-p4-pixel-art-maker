@@ -59,7 +59,7 @@ $(function() {
 	$('#pixelCanvas').on('click','td', function(evt) {
 		grid.paintingGrid(evt.target);
 	});
-	$('#colorPicker').on('input', function(evt){
+	$('#colorPicker').on('change', function(evt){
 		// console.log(evt.target.value);
 		// console.log($('#colorPicker').spectrum("get"));
 		grid.changeColor(evt.target.value);

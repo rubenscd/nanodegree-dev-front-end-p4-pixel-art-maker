@@ -12,7 +12,7 @@ O Pixel Art Maker, você poderá desenha uma arte em pixel, crie a grade selecio
 
 ## Extras
 
-Foi adicionado o polyfill do campo `<input type="color">` por [não ter suporte nativo](https://caniuse.com/#search=color) nos browsers *Safari* e *Edge*.
+Foi adicionado o polyfill em conjunto com o Modernizr do campo `<input type="color">` por [não ter suporte nativo](https://caniuse.com/#search=color) nos browsers *Safari* e *Edge*.
 
 Referências utilizadas na produção do projeto:
 [jQuery](https://jquery.com/)

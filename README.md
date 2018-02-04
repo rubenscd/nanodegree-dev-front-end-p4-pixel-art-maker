@@ -18,6 +18,6 @@ Foi adicionado um preview da grade que está sendo pintada, a grade de preview f
 Referências utilizadas na produção do projeto:
   * [jQuery](https://jquery.com/)
   * [modernizr](https://modernizr.com/)
-  * [input color polyfill](https://github.com/jonstipe/color-polyfill)
+  * [input color polyfill - spectrum](https://bgrins.github.io/spectrum/)
 
 # nanodegree-dev-front-end-p4-pixel-art-maker

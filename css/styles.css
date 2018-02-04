@@ -19,16 +19,33 @@ h2:first-of-type {
     margin-top: 0.5em;
 }
 
+
+/* grid extra */
+#grid-extra {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+#grid-preview {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 1rem;
+}
+
+
 /* grid */
 table,
 tr,
 td {
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 table {
+    display: inline-block;
     border-collapse: collapse;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 tr {
@@ -39,14 +56,37 @@ td {
     width: 1rem;
     cursor: pointer;
 }
-/* td.on {
 
-} */
+
+/* table preview */
+.preview {
+    /* position: fixed;
+    top: 0;
+    right: 0; */
+    border: 1px solid #000;
+}
+
+
+.preview.hide {
+    visibility: hidden;
+}
+
+
+.preview tr,
+.preview td {
+    height: 1px;
+    width: 1px;
+    border: 0;
+}
 
 /* forms */
 label {
     display: inline-block;
+    margin: 0 1rem;
 }
+
+
 input[type=number] {
-    width: 10em;
+    width: 5rem;
+    font-size: 3rem;
 }

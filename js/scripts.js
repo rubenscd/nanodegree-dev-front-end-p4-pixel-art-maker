@@ -10,6 +10,8 @@ $(function() {
 		cleanedGrid: function() {
 			/* TODO: remove grid */
 			$('#pixelCanvas tr').remove();
+			/* TODO: remove grid do preview */
+			$('.preview').remove();
 		},
 		makeGrid: function() {
 			/* TODO: chama a limpeza se caso existir um grid criado */
@@ -61,4 +63,19 @@ $(function() {
 	$('#colorPicker').on('change', function(evt){
 		grid.changeColor(evt.target.value);
 	});
+	// evento preview
+	$('#pixelCanvas').on('click',function(evt) {
+		$('.preview').last().remove();
+		/* TODO: clona o grid remove a referencia e adiciona uma class para aplicar estilo */
+		let cloneGrid = $(this).clone().removeAttr('id').addClass('preview');
+		cloneGrid.insertAfter(this);
+	});
+	// $('#pixelCanvas').on('mouseleave',function(evt) {
+	// 	$('.preview').remove();
+	// });
+	// $('#pixelCanvas').hover(function(evt) {
+	// 	$(this).clone().insertAfter('.preview h2');
+	// },function(evt){
+	// 	// $('.preview table').toggleClass('hide');
+	// });
 });

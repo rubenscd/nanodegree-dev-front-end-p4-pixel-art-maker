@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Pixel Art Maker!</title>
+		<link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.css">
 		<link rel="stylesheet" href="css/styles.css">
@@ -13,16 +14,23 @@
 		<h2>Escolha o tamanho da grade</h2>
 		<!-- <form id="sizePicker" method="get" action=""> -->
 		<form id="sizePicker">
-			Grade Altura: <input type="number" id="grid-rows" name="grid_rows" min="1" value="" required>
-			Grade Largura: <input type="number" id="grid-cols" name="grid_cols" min="1" value="" required>
+			<label for="grid-rows">
+				Grade Altura:<br>
+				<input type="number" id="grid-rows" name="grid_rows" min="1" value="" required>
+			</label>
+			<label for="grid-cols">
+				Grade Largura:<br>
+				<input type="number" id="grid-cols" name="grid_cols" min="1" value="" required>
+			</label>
 			<!-- <input type="submit"> -->
 			<!-- <button type="button" onclick="makeGrid(10,5);">Enviar</button> -->
 			<button type="submit">Enviar</button>
 		</form>
 		
-		<h2>Pick A Color</h2>
+		<h2>Escolha uma Cor</h2>
 		<input type="color" id="colorPicker">
 		
+		<hr>
 		<h2>Design Canvas</h2>
 		<table id="pixelCanvas"></table>
 		

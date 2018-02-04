@@ -70,12 +70,4 @@ $(function() {
 		let cloneGrid = $(this).clone().removeAttr('id').addClass('preview');
 		cloneGrid.insertAfter(this);
 	});
-	// $('#pixelCanvas').on('mouseleave',function(evt) {
-	// 	$('.preview').remove();
-	// });
-	// $('#pixelCanvas').hover(function(evt) {
-	// 	$(this).clone().insertAfter('.preview h2');
-	// },function(evt){
-	// 	// $('.preview table').toggleClass('hide');
-	// });
 });

@@ -1,6 +1,6 @@
 # Projeto Pixel Art Maker
 
-// ## Table of Contents
+<!-- // ## Table of Contents -->
 
 * [Sobre](#Sobre)
 * [Extras](#Extras)
@@ -16,8 +16,8 @@ Foi adicionado o polyfill em conjunto com o Modernizr do campo `<input type="col
 Foi adicionado um preview da grade que está sendo pintada, a grade de preview fica ao lado da grade normal.
 
 Referências utilizadas na produção do projeto:
-[jQuery](https://jquery.com/)
-[modernizr](https://modernizr.com/)
-[input color polyfill](https://github.com/jonstipe/color-polyfill)
+  * [jQuery](https://jquery.com/)
+  * [modernizr](https://modernizr.com/)
+  * [input color polyfill](https://github.com/jonstipe/color-polyfill)
 
 # nanodegree-dev-front-end-p4-pixel-art-maker

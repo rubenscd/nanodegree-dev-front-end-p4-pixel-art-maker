@@ -19,12 +19,12 @@ $(function() {
 			let createdGrid = "";
 			for (let row = 0; row < Number(grid.rowsTotals); row++) {
 				// grid.createdGrid[row] = [];
-				createdGrid += '<tr id="linha-'+row+'">';
+				createdGrid += `<tr id="linha-${row}">`;
 				for (let col = 0; col < Number(grid.colsTotals); col++) {
 					// grid.createdGrid[row][col] = 'off';
-					createdGrid += '<td id="linha-'+row+'-coluna-'+col+'"></td>';
+					createdGrid += `<td id="linha-${row}-coluna-${col}"></td>`;
 				}
-				createdGrid += '</tr>';
+				createdGrid += `</tr>`;
 			}
 			/* TODO: cria o grid com os parametros repassados do form */
 			return $('#pixelCanvas').append(createdGrid);
